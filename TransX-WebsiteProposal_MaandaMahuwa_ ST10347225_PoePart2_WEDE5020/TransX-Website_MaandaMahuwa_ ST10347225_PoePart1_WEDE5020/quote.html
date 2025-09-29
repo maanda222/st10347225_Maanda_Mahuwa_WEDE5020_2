@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Quote | TransX Logistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><script defer src="js/main.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt="TransX Logistics logo"></a>
+  <nav class="nav" aria-label="Main">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu" class="menu">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="services/index.html">Services</a></li><li><a href="track.html">Track</a></li>
+      <li><a class="btn" href="quote.html">Get a Quote</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Get a Quote</h1>
+  <form id="quoteForm" class="msf" novalidate>
+    <fieldset data-step="1">
+      <legend>Pickup & Dropoff</legend>
+      <label>Pickup Address<input name="pickup" required placeholder="123 Main Rd, Centurion"></label>
+      <label>Dropoff Address<input name="dropoff" required placeholder="45 Long St, Cape Town"></label>
+      <label>Date<input type="date" name="date" required></label>
+      <label>Vehicle Type
+        <select name="vehicle" required>
+          <option value="">Select</option>
+          <option>1-ton bakkie</option>
+          <option>8-ton truck</option>
+          <option>14-ton truck</option>
+          <option>Super-link</option>
+        </select>
+      </label>
+      <div class="msf-nav"><button class="btn next" type="button">Next</button></div>
+    </fieldset>
+
+    <fieldset data-step="2" hidden>
+      <legend>Shipment Details</legend>
+      <label>Weight (kg)<input type="number" name="weight" required min="1"></label>
+      <label>Dimensions (L x W x H cm)<input name="dims" placeholder="120 x 80 x 100" required></label>
+      <label>Goods Type<input name="goods" placeholder="FMCG / Palletised / Fragile" required></label>
+      <label>Additional Notes<textarea name="notes" rows="3"></textarea></label>
+      <div class="msf-nav"><button class="btn prev" type="button">Back</button><button class="btn next" type="button">Next</button></div>
+    </fieldset>
+
+    <fieldset data-step="3" hidden>
+      <legend>Your Details</legend>
+      <label>Company / Name<input name="name" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Phone<input type="tel" name="phone" required></label>
+      <label><input type="checkbox" name="consent" required> I agree to the privacy policy.</label>
+      <div class="msf-nav"><button class="btn prev" type="button">Back</button><button class="btn" type="submit">Submit Quote</button></div>
+    </fieldset>
+  </form>
+  <div id="quoteResult" class="success" aria-live="polite"></div>
+</main>
+
+<footer class="site-footer"><div class="footer-inner">
+  <p>&copy; 2025 TransX Logistics. All rights reserved.</p>
+  <p><strong>Head Office:</strong> Roodepoort Ruimsig • <strong>Phone:</strong> +27 (10) 555 0123 • <strong>Email:</strong> maandamahuwa@gmail.com</p>
+</div></footer>
+</body>
+</html>

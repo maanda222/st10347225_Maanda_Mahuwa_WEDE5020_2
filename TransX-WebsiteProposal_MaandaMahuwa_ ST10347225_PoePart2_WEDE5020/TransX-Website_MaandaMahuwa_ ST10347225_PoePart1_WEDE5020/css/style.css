@@ -1,0 +1,319 @@
+/* ----------------------------------------------------- */
+/* TransX Logistics Styles - Part 2 Compliance (Final Corrected CSS) */
+/* ----------------------------------------------------- */
+
+/* 1. Base Styles, Reset, and Variables (2.2) */
+:root {
+    /* Define Colour Scheme */
+    --navy: #0A2A43; /* Primary Dark */
+    --cobalt: #1F6FEB; /* Primary Blue */
+    --yellow: #F2C744; /* Accent */
+    --slate: #F3F4F6; /* Light Background */
+    --charcoal: #111827; /* Text */
+
+    /* Typography Defaults (3.2 Relative Units) */
+    --fs-base: 1.125rem; /* 18px base for better accessibility */
+}
+
+/* CSS Reset (2.2 Establish a Base Style) */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Body Styles (2.2 Establish a Base Style, 3.2 Relative Units) */
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: var(--charcoal);
+    background: #fff;
+    line-height: 1.6;
+    font-size: var(--fs-base); /* Apply base font size */
+}
+
+/* Typography (2.3 Apply Typography Styles) */
+h1, h2, h3 {
+    font-family: 'Poppins', 'Inter', 'Arial', sans-serif;
+    margin: 0 0 0.5rem;
+    line-height: 1.1;
+    color: var(--navy);
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+}
+.section-title {
+    margin: 2.5rem 0 1.5rem;
+    text-align: center;
+}
+
+/* Links and Buttons (2.5 Apply Visual Styles: :hover, :focus, :active) */
+.nav a, a {
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav a:hover, a:hover, .nav a:focus, a:focus {
+    color: var(--cobalt);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--cobalt);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s, transform 0.1s;
+}
+.btn-secondary {
+    background: var(--navy);
+}
+.nav .btn {
+    background: var(--yellow);
+    color: var(--charcoal);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+}
+.btn:hover, .nav .btn:hover {
+    filter: brightness(1.1);
+}
+.btn:focus {
+    outline: 3px solid var(--cobalt);
+    outline-offset: 2px;
+}
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* ----------------------------------------------------- */
+/* 2. Desktop Layout (2.4 Flexbox & CSS Grid) */
+/* ----------------------------------------------------- */
+
+/* Header (Flexbox) */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* High z-index for sticky header */
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+}
+.logo img {
+    height: 40px; 
+}
+.nav .menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+.nav-toggle {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 60vh; /* (3.2 Relative Units: vh) */
+    display: grid;
+    place-items: center;
+    background: var(--slate);
+    overflow: hidden;
+    color: #fff;
+}
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4); 
+    z-index: -1;
+}
+.hero-content {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+}
+.hero h1, .hero p {
+    color: #fff;
+}
+.cta-row {
+    margin-top: 1.5rem;
+}
+
+/* Cards (CSS Grid) */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3-column desktop layout */
+    gap: 2rem;
+}
+.card {
+    display: block;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background: #fff;
+    color: var(--charcoal);
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 12px rgba(16, 24, 40, 0.05);
+}
+.card:hover, .card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.15);
+}
+
+/* Badges and Grid-2 */
+.badges {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    justify-content: center;
+}
+.badges li {
+    background: #eef2ff;
+    color: #1e3a8a;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Fixed 2-column desktop layout */
+    gap: 3rem;
+    padding-top: 1.5rem;
+}
+
+/* Forms (Existing styles optimized for mobile) */
+.form label{display:flex;flex-direction:column;gap:.25rem;margin:.5rem 0}
+.form input,.form textarea,.form select{border:1px solid #d1d5db;border-radius:.5rem;padding:.6rem}
+.form button{margin-top:.5rem}
+.msf fieldset{border:1px solid #e5e7eb;border-radius:.75rem;padding:1rem;margin:1rem 0}
+.msf .msf-nav{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.5rem}
+.success{margin-top:1rem;color:#065f46;background:#ecfdf5;border:1px solid #34d399;padding:.75rem;border-radius:.5rem}
+.track-result{margin-top:1rem;border:1px dashed #d1d5db;border-radius:.5rem;padding:1rem;min-height:3rem}
+
+
+/* Footer */
+.site-footer {
+    background: var(--navy);
+    color: #fff;
+    margin-top: 3rem;
+}
+.site-footer .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+}
+.site-footer a {
+    color: var(--yellow);
+}
+.active {
+    border-bottom: 2px solid var(--cobalt); /* Highlight active nav link */
+}
+
+/* ----------------------------------------------------- */
+/* 3. Responsive Design (3.1 Media Queries and Breakpoints) */
+/* ----------------------------------------------------- */
+
+/* Tablet Breakpoint - Max Width 1024px */
+@media (max-width: 1024px) {
+    /* Adjust cards for a more flexible 2-column layout on tablets */
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Breakpoint - Max Width 767px (3.1 Implementation) */
+@media (max-width: 767px) {
+    
+    /* 3.1 Modify font sizes */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.75rem; }
+    body { font-size: 1rem; } /* Smaller base font for mobile */
+
+    .hero { min-height: 45vh; }
+    .container { padding: 1.5rem 1rem; }
+
+    /* Switch to single-column layouts */
+    .cards, .grid-2 {
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+
+    /* Stack buttons vertically */
+    .cta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* Mobile Navigation (3.1 Apply responsive styling to navigation) */
+    .site-header {
+        flex-wrap: wrap;
+        padding-bottom: 0.75rem;
+    }
+    
+    .nav-toggle {
+        display: block;
+        background: var(--slate); 
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 0.4rem 0.6rem;
+        order: 2; /* Ensures it stays visible */
+    }
+    
+    .nav {
+        width: 100%; 
+        order: 3;
+    }
+    
+    .menu {
+        display: none; /* Menu is hidden by default */
+        flex-direction: column;
+        width: 100%;
+        position: static; 
+        border-top: 1px solid var(--slate);
+        padding-top: 0.5rem;
+        gap: 0.5rem;
+    }
+    
+    /* Show menu when aria-expanded is true (paired with main.js) */
+    .menu[aria-expanded="true"] {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+}

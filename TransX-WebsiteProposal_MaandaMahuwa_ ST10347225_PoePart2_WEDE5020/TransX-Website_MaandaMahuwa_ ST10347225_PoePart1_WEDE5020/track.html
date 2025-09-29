@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Shipment | TransX Logistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><script defer src="js/main.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt="TransX Logistics logo"></a>
+  <nav class="nav" aria-label="Main">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu" class="menu">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="services/index.html">Services</a></li><li><a href="track.html">Track</a></li>
+      <li><a class="btn" href="quote.html">Get a Quote</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Track Shipment</h1>
+  <form id="trackForm" class="form" novalidate>
+    <label for="trackNo">Tracking / Reference Number</label>
+    <input id="trackNo" name="trackNo" type="text" required placeholder="e.g., TX-2025-12345">
+    <button class="btn" type="submit">Check Status</button>
+  </form>
+  <div id="trackResult" class="track-result" aria-live="polite"></div>
+  <p class="note">* Demo only. In phase 2 this will connect to the TMS/OnTrack API.</p>
+</main>
+
+<footer class="site-footer"><div class="footer-inner">
+  <p>&copy; 2025 TransX Logistics. All rights reserved.</p>
+  <p><strong>Head Office:</strong> Roodepoort Ruimsig • <strong>Phone:</strong> +27 (10) 555 0123 • <strong>Email:</strong> maandamahuwa@gmail.com</p>
+</div></footer>
+</body>
+</html>
